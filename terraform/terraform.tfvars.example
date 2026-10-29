@@ -1,0 +1,6 @@
+aws_region        = "ap-south-1"
+project_name      = "aws-high-availability-web-app"
+environment       = "lab"
+vpc_cidr          = "10.10.0.0/16"
+instance_type     = "t3.micro"
+web_instance_count = 2
