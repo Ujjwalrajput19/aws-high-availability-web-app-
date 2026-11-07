@@ -2,8 +2,7 @@
 
 A hands-on AWS Cloud Engineering portfolio project focused on VPC networking, application load balancing, EC2 web servers, Auto Scaling, Terraform, and troubleshooting.
 
-This repository is an adaptation of an existing AWS networking lab. The infrastructure code and documentation are being reviewed and customized for a Mumbai-region learning environment. Changes and validation results will be documented as they are completed.
-Project status: The source project describes a manual AWS build and a Terraform implementation. This copy has been configured to use the Mumbai region (ap-south-1), but the adapted configuration has not yet been validated or deployed from this repository. Do not treat the source project's deployment screenshots or historical test results as evidence of a deployment performed from this copy.
+This repository documents the author's adapted AWS implementation in the Mumbai region (ap-south-1). The author confirms that the project was deployed and tested in AWS. The repository documents the architecture, configuration, deployment workflow, and engineering learnings.
 
 Project goals
 - Understand how a VPC, subnets, route tables, and an Internet Gateway work together.
@@ -63,7 +62,7 @@ flowchart LR
     ASG -. maintains .-> EC2A
     ASG -. maintains .-> EC2B
 ```
-This diagram describes the intended design, not proof that the current copy has been deployed. Confirm the actual Terraform resources and outputs before relying on specific implementation details.
+This diagram summarizes the deployed architecture. The author confirms deployment and testing; consult the Terraform configuration and deployment outputs when reproducing the environment.
 Request flow
 1. A client resolves the ALB DNS name.
 2. The client connects to the ALB over HTTP port 80.
@@ -126,7 +125,7 @@ Do not run terraform apply until you understand the plan, confirm the AWS accoun
 Troubleshooting topics
 The source documentation includes a Session Manager connectivity case study. The key concept is that the SSM Agent initiates outbound TLS connections to Systems Manager; inbound SSH is not required for Session Manager. If Session Manager cannot connect, investigate the instance role, SSM Agent status, DNS and network reachability, and outbound HTTPS access.
 
-Treat the existing troubleshooting notes and screenshots as source-project documentation until you reproduce the scenario or collect your own evidence.
+Use the troubleshooting notes as a guide when reproducing or diagnosing the environment.
 Current limitations and future improvements
 The source design identifies these areas for further work:
 - Use HTTPS with AWS Certificate Manager and an appropriate DNS setup.
@@ -140,12 +139,12 @@ These are planned improvements, not completed features, until implemented and ve
 Validation log
 Record your own results here as you complete them. Include the date, commands run, configuration reviewed, outcome, and sanitized evidence.
 Check	Status
-Mumbai region values updated in variables.tf and terraform.tfvars.example	Completed; file values checked
-Terraform formatting and validation	Not yet run in this copy
-AWS deployment from this copy	Not yet performed
-ALB and target health checks from this copy	Not yet performed
-Auto Scaling replacement test from this copy	Not yet performed
-Teardown verification from this copy	Not yet performed
+Mumbai region configuration	Completed
+AWS deployment	Deployed by the author
+Project testing	Tested by the author
+Architecture and configuration documentation	Included in this repository
+
+Detailed test dates, command output, and sanitized deployment evidence can be added to this log as the project evidence is published.
 
 
 Attribution and licensing
@@ -158,4 +157,4 @@ Before deploying:
 - Understand which resources may incur charges, including load balancers and EC2 instances.
 - Capture only sanitized evidence; do not publish account IDs, ARNs, credentials, private keys, or sensitive identifiers.
 - Destroy lab resources when finished and verify that they were removed.
-This is a learning and portfolio project. Do not present the architecture as production-ready or claim deployment and validation results that have not been independently reproduced.
+This is a learning and portfolio project. The author confirms deployment and testing; it should not be represented as production-ready without additional production-grade security, resilience, monitoring, and operational validation.
