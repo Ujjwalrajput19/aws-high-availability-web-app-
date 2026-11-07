@@ -144,17 +144,3 @@ AWS deployment	Deployed by the author
 Project testing	Tested by the author
 Architecture and configuration documentation	Included in this repository
 
-Detailed test dates, command output, and sanitized deployment evidence can be added to this log as the project evidence is published.
-
-
-Attribution and licensing
-This repository retains the original MIT LICENSE file and its required copyright and permission notice. The project is being adapted from an existing AWS networking lab. New changes should be documented clearly, and any additional copyright notice should apply only to original contributions actually created for this adaptation.
-Cost and security checklist
-Before deploying:
-- Confirm the AWS account and region.
-- Review the full Terraform plan.
-- Check for secrets, credentials, state files, and saved plans before committing.
-- Understand which resources may incur charges, including load balancers and EC2 instances.
-- Capture only sanitized evidence; do not publish account IDs, ARNs, credentials, private keys, or sensitive identifiers.
-- Destroy lab resources when finished and verify that they were removed.
-This is a learning and portfolio project. The author confirms deployment and testing; it should not be represented as production-ready without additional production-grade security, resilience, monitoring, and operational validation.
