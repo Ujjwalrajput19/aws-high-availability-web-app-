@@ -29,6 +29,12 @@ Region and configuration
 - Web listener: HTTP on TCP port 80
 - Configured web instance count: 2 by default, with input validation limiting it to one or two instances
 The Terraform provider reads the region from var.aws_region. The default in variables.tf and the example value in terraform.tfvars.example have been changed to ap-south-1. Review any future variable files or environment variables before running Terraform, because explicit values can override defaults.
+## Screenshots & Project Visual
+
+The image below provides a visual overview of the AWS high-availability web application project, including its architecture and key AWS components.
+
+![AWS High-Availability Web Application project showcase](docs/images/AWS%20High-Availability%20Web%20Application.png)
+
 Architecture overview
 The intended architecture has an internet-facing ALB in two public subnets. The ALB forwards HTTP requests to a target group containing EC2 web servers across two Availability Zones. An Auto Scaling Group manages the desired number of instances.
 ```mermaid
